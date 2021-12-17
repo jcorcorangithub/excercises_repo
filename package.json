@@ -1,0 +1,19 @@
+{
+  "name": "excercises_repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "problems.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcorcorangithub/excercises_repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcorcorangithub/excercises_repo/issues"
+  },
+  "homepage": "https://github.com/jcorcorangithub/excercises_repo#readme"
+}
