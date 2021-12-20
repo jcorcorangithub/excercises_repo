@@ -130,3 +130,55 @@ var addbinary = function(a, b) {
 
 // 0 <= x <= 231 - 1
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Longest Common Prefix
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+// Example 1:
+
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+
+// Constraints:
+
+// 1 <= strs.length <= 200
+// 0 <= strs[i].length <= 200
+// strs[i] consists of only lower-case English letters.
+
+var longestCommonPrefix = function(strs) {
+    //look at the value of the first char at the first string
+    //loop through each other string and see if the first letter of the first string matches each char at the same index of the other strings
+    //if they all match set/add that char as a string variable that will ultimately be returned
+    //go on to the next char of the first string and repeat
+    let shortest = strs[0].length; 
+    
+    strs.forEach(str => {
+        if(str.length < shortest){
+            shortest = str.length;
+        };
+    });
+
+    let longestCommonPrefix = '';
+
+    for(let i = 0; i < shortest; i++){
+        // strs[0][i] == strs[i+1][i];
+        // strs[0][i] == strs[i+2][i];
+        // strs[0][i] == strs[i+3][i];
+
+        for(let j = 0; j < strs.length; j++){
+            if(strs[0][i] != strs[j][i]){
+                break;
+            } // otherwise go to next string and repeat until last string -- then add to longest prefix
+        };
+    };
+    console.log(longestCommonPrefix);
+    return longestCommonPrefix;
+};
+
+longestCommonPrefix(["flower","flow","flight"]);
