@@ -167,18 +167,19 @@ var longestCommonPrefix = function(strs) {
     let longestCommonPrefix = '';
 
     for(let i = 0; i < shortest; i++){
-        // strs[0][i] == strs[i+1][i];
-        // strs[0][i] == strs[i+2][i];
-        // strs[0][i] == strs[i+3][i];
+        for(let j = 1; j < strs.length; j++){
+            // console.log(`first string and ${i} char: ${strs[0][i]}`);
+            // console.log(`${j+1} string and ${i} char: ${strs[j][i]}`);
 
-        for(let j = 0; j < strs.length; j++){
             if(strs[0][i] != strs[j][i]){
-                break;
-            } // otherwise go to next string and repeat until last string -- then add to longest prefix
-        };
+                console.log(longestCommonPrefix);
+                return longestCommonPrefix;
+            };
+        }
+        longestCommonPrefix = `${longestCommonPrefix}${strs[0][i]}`;
     };
     console.log(longestCommonPrefix);
     return longestCommonPrefix;
 };
 
-longestCommonPrefix(["flower","flow","flight"]);
+longestCommonPrefix(["dog","racecar","car"]);
